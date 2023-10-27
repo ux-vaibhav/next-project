@@ -57,21 +57,30 @@ export function CallDispositionForm() {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    setIsLoading(true);
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    toast({
-      title: `You submitted the following values`,
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
-  }
+  setIsLoading(true);
+  
+  fetch('https://dummyjson.com/products/add', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    title:data.category,
+    /* other product data */
+  })
+})
+.then(res => res.json())
+.then((res)=>{
+  setIsLoading(false);
+  toast({
+    title: `You submitted the following values`,
+    description: (
+      <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+        <code className="text-white">{JSON.stringify(res.title, null, 2)}</code>
+      </pre>
+    ),
+  });
+});
+ }
 
   return (
     <>
