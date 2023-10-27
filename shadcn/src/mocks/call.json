@@ -1,0 +1,14 @@
+[
+  { "id": 1, "label": "Devcast", "desc": "Construction Foreman" },
+  { "id": 2, "label": "Quinu", "desc": "Subcontractor" },
+  { "id": 3, "label": "Flipopia", "desc": "Architect" },
+  { "id": 4, "label": "Twitternation", "desc": "Construction Expeditor" },
+  { "id": 5, "label": "Rhybox", "desc": "Engineer" },
+  { "id": 6, "label": "Yakitri", "desc": "Construction Foreman" },
+  { "id": 7, "label": "Dazzlesphere", "desc": "Engineer" },
+  { "id": 8, "label": "Kwilith", "desc": "Construction Worker" },
+  { "id": 9, "label": "Photospace", "desc": "Estimator" },
+  { "id": 10, "label": "Jabbersphere", "desc": "Electrician" },
+  { "id": 11, "label": "Gabtype", "desc": "Engineer" },
+  { "id": 12, "label": "Zoomzone", "desc": "Estimator" }
+]
