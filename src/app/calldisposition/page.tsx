@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function CallDispositionPage() {
   return (
     <>
-      <div className="bg-gray-100">
+      <div>
         <CallDispositionForm />
       </div>
     </>
