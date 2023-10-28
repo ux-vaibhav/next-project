@@ -1,74 +1,74 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+  FormMessage
+} from '@/components/ui/form';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  CardTitle
+} from '@/components/ui/card';
 
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { toast } from "@/components/ui/use-toast";
-import { Toaster } from "@/components/ui/toaster";
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { toast } from '@/components/ui/use-toast';
+import { Toaster } from '@/components/ui/toaster';
 
-import data from "../../../mocks/call.json";
-import { Icons } from "@/components/ui/icons";
+import data from '../../../mocks/call.json';
+import { Icons } from '@/components/ui/icons';
 
 const callCategory = () => {
-  const labels = data.map((e) => {
+  const labels = data.map(e => {
     return e.label;
   });
   const desc = data;
   return {
     labels,
-    desc,
+    desc
   };
 };
 
 const { labels, desc } = callCategory();
 
 const FormSchema = z.object({
-  category: z.enum(["", ...labels], {
-    required_error: "You need to select a call Category type.",
-  }),
+  category: z.enum(['', ...labels], {
+    required_error: 'You need to select a call Category type.'
+  })
 });
 
 export function CallDispositionForm() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
+    resolver: zodResolver(FormSchema)
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     setIsLoading(true);
 
-    fetch("https://dummyjson.com/products/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    fetch('https://dummyjson.com/products/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        title: data.category,
+        title: data.category
         /* other product data */
-      }),
+      })
     })
-      .then((res) => res.json())
-      .then((res) => {
+      .then(res => res.json())
+      .then(res => {
         setIsLoading(false);
         toast({
           title: `You submitted the following values`,
@@ -78,7 +78,7 @@ export function CallDispositionForm() {
                 {JSON.stringify(res.title, null, 2)}
               </code>
             </pre>
-          ),
+          )
         });
       });
   }
@@ -123,9 +123,9 @@ export function CallDispositionForm() {
                                   <RadioGroupItem value={i.label} />
                                 </FormControl>
                                 <FormLabel className="py-1 text-base justify-center items-center flex gap-3">
-                                  {i.label}{" "}
+                                  {i.label}{' '}
                                   <p className="text-sm text-slate-500">
-                                    {" "}
+                                    {' '}
                                     {i.desc}
                                   </p>
                                 </FormLabel>

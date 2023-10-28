@@ -1,16 +1,16 @@
-import { Metadata } from "next";
-import Link from "next/link";
+import { Metadata } from 'next';
+import Link from 'next/link';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-import { buttonVariants } from "@/components/ui/button";
-import { UserAuthForm } from "./components/user-auth-form";
-import { ModeToggle } from "@/components/ui/theme-toggle";
-import Image from "next/image";
+import { buttonVariants } from '@/components/ui/button';
+import { UserAuthForm } from './components/user-auth-form';
+import { ModeToggle } from '@/components/ui/theme-toggle';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: "Authentication",
-  description: "Authentication forms built using the components.",
+  title: 'Authentication',
+  description: 'Authentication forms built using the components.'
 };
 
 export default function AuthenticationPage() {
@@ -18,8 +18,8 @@ export default function AuthenticationPage() {
     <>
       <div className="container relative  h-screen flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
         <div className="flex absolute right-4 top-4 md:left-8 md:top-8 gap-1">
-          <Link href="" className={cn(buttonVariants({ variant: "ghost" }))}>
-            {" "}
+          <Link href="" className={cn(buttonVariants({ variant: 'ghost' }))}>
+            {' '}
             Login
           </Link>
           {/* <ModeToggle/> */}
@@ -36,14 +36,14 @@ export default function AuthenticationPage() {
             </div>
             <UserAuthForm />
             <p className="px-8 text-center text-sm text-muted-foreground">
-              By clicking continue, you agree to our{" "}
+              By clicking continue, you agree to our{' '}
               <Link
                 href="/terms"
                 className="underline underline-offset-4 hover:text-primary"
               >
                 Terms of Service
-              </Link>{" "}
-              and{" "}
+              </Link>{' '}
+              and{' '}
               <Link
                 href="/privacy"
                 className="underline underline-offset-4 hover:text-primary"
@@ -66,7 +66,7 @@ export default function AuthenticationPage() {
                 tortor risus, semper dui in nisi lacinia rhoncus. Ut dapibus
                 nisl eu eleifend vulputate. Donec viverra magna id urna finibus,
                 nec scelerisque massa congue. Proin volutpat nulla et porta
-                venenatis.{" "}
+                venenatis.{' '}
               </p>
               <footer className="text-sm">Morbi semper dui in nisi</footer>
             </blockquote>
