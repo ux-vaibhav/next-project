@@ -117,7 +117,7 @@ export function CallDispositionForm() {
                             return (
                               <FormItem
                                 key={index}
-                                className="flex items-center space-x-3 space-y-0"
+                                className="flex items-center space-x-3 space-y-0 cursor-pointer"
                               >
                                 <FormControl>
                                   <RadioGroupItem value={i.label} />
@@ -138,7 +138,7 @@ export function CallDispositionForm() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit">
+                <Button type="submit" disabled={isLoading}>
                   {isLoading && (
                     <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                   )}
