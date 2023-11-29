@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component Card component snapshot 1`] = `
+<div
+  className="rounded-lg border bg-card text-card-foreground shadow-sm"
+/>
+`;
